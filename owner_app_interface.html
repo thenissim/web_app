@@ -1,0 +1,59 @@
+<!-- Displays owner's existing and pending applications, next to each one there's a cancel option-->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/forms_table.css">
+	</head>
+	<body>
+         <ul class="navigation_bar">
+         <li class="right"><a href="/logout">Logout</a></li>
+		 <li class="left"><a href="/main_owner">Back</a></li>
+		 <li class="left"><a href="/submit_walk_app">Submit Another Application</a></li>
+		 </ul>
+		<h2 class="important_title"> These are your pending and existing walks</h2>
+		<form action="/owner_app_interface" method="post">
+		{% if num_of_apps!=0|int %} <!--checking if owner has applications or existing walks. he can review or cancel any of them -->
+		<table class="calendar">	
+			<tr class="labels_row"> 
+				<td> Day </td>
+				<td> Shift </td>
+				<td> Submit Date </td>
+				<td> Walker's Name </td>
+				<td> Walker's Phone </td>
+				<td> Walker's Email </td>
+				<td> Dog Name </td>
+				<td> Status </td>
+			</tr>
+		{% for app in walk_application %}
+			<tr class="center"> 
+				<td> {{app.0}} </td>
+				<td> {{app.1}} </td>
+				<td> {{app.2}} </td>
+				<td> {{app.3}} </td>
+				<td> {{app.4}} </td>
+				<td> {{app.5}} </td>
+				<td> {{app.6}} </td>
+				<td> {{app.7}} </td>
+				{% if app.7 == "approved" %}
+				<td> <input type="radio" name="{{app.8}}" value="cancelled"> Cancel </td>
+				{% endif %}	 
+			</tr>	
+		{% endfor %}
+		
+		</table>
+		<br><br>
+		<div class="center">
+		<input type="submit" value="Update Applications"  class="important_button" />
+		</div>
+		{% else %} <!--owner has no applications or walks -->
+		<br> oops! Looks like you have no pending requests or schedualled walks... <br>
+			 You can submit a new walk application<a class="special_links" href="/submit_walk_app">here</a>
+		{% endif %}
+		
+		</form>
+		
+		 
+	</body>
+</html>
+
+ 
+

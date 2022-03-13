@@ -1,0 +1,174 @@
+<!-- Here the owner can choose which dog he wants to send walks requests and when. -->
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/forms_table.css">
+	</head>
+	<body>
+         <ul class="navigation_bar">
+         <li class="right"><a href="/logout">Logout</a></li>
+		 <li class="left"><a href="/main_owner">Back</a></li>
+		 </ul>
+		
+		<form action="/match_walker" method="post">
+			<br>
+			
+			<table>
+			
+				<tr>
+					<td>
+						Please choose ONE of your dogs that you would like to submit the application to
+					</td>
+						
+					<td>
+						<select name="dog" id="dog" >
+						{% for dog in dog_list %}
+						<option value="{{dog.0}}"> {{dog.0}} </option>
+						{% endfor %}
+						</select>
+					</td>
+			</table>
+			<br>
+			<table>
+			
+				<tr>
+					<td>
+						When do you need the walks?
+					</td>
+				</tr>
+				
+				<tr class="labels_row">
+					<td>
+						Shift:
+					</td>
+					<td>
+						Morning
+					</td>
+					<td>
+						Afternoon
+					</td>
+					<td>
+						Evening
+					</td>
+                </tr>
+				
+				
+				<tr class="center">
+					<td>
+						Sunday
+					</td>
+					
+					<td>
+						<input type="checkbox" name="sunday_morning" value="available" class="group-required" id="checkbox-group-id" />
+					</td>
+					<td>
+						<input type="checkbox" name="sunday_afternoon" value="available"  />
+					</td>
+					<td>
+						<input type="checkbox" name="sunday_evening" value="available" />
+					</td>
+                </tr>
+				
+				<tr class="center">
+					<td>
+						Monday
+					</td>
+					<td>
+						<input type="checkbox" name="monday_morning" value="available"/>
+					</td>
+					<td>
+						<input type="checkbox" name="monday_afternoon" value="available"/>
+					</td>
+					<td>
+						<input type="checkbox" name="monday_evening" value="available"/>
+					</td>
+                </tr>
+				
+				<tr class="center">
+					<td>
+						Tuesday
+					</td>
+					<td>
+						<input type="checkbox" name="tuesday_morning" value="available"/>
+					</td>
+					<td>
+						<input type="checkbox" name="tuesday_afternoon" value="available"/>
+					</td>
+					<td>
+						<input type="checkbox" name="tuesday_evening" value="available"/>
+					</td>
+                </tr>
+	
+				<tr class="center">
+					<td>
+						Wednesday
+					</td>
+					<td>
+						<input type="checkbox" name="wednesday_morning" value="available"/>
+					</td>
+					<td>
+						<input type="checkbox" name="wednesday_afternoon" value="available"/>
+					</td>
+					<td>
+						<input type="checkbox" name="wednesday_evening" value="available"/>
+					</td>
+                </tr>
+				
+				<tr class="center">
+					<td>
+						Thursday
+					</td>
+					<td>
+						<input type="checkbox" name="thursday_morning" value="available"/>
+					</td>
+					<td>
+						<input type="checkbox" name="thursday_afternoon" value="available"/>
+					</td>
+					<td>
+						<input type="checkbox" name="thursday_evening" value="available"/>
+					</td>
+                </tr>
+				
+				<tr class="center">
+					<td>
+						Friday
+					</td>
+					<td>
+						<input type="checkbox" name="friday_morning" value="available"/>
+					</td>
+					<td>
+						<input type="checkbox" name="friday_afternoon" value="available"/>
+					</td>
+					<td>
+						<input type="checkbox" name="friday_evening" value="available"/>
+					</td>
+                </tr>
+				
+				<tr class="center">
+					<td>
+						Saturday
+					</td>
+					<td>
+						<input type="checkbox" name="saturday_morning" value="available"/>
+					</td>
+					<td>
+						<input type="checkbox" name="saturday_afternoon" value="available"/>
+					</td>
+					<td>
+						<input type="checkbox" name="saturday_evening" value="available"/>
+					</td>
+                </tr>
+				
+				<tr>
+					<td>
+						<br><input type="submit" value="Submit Request" class="important_button"/> 
+					</td>
+				</tr>
+				
+
+			</table>	
+			
+           
+        </form>
+	</body>
+</html>

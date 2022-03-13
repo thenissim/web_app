@@ -1,0 +1,31 @@
+<!-- Shows owner's details from sign up sheet -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/forms_table.css">
+	</head>
+	<body>
+		<ul class="navigation_bar">
+         <li class="right"><a href="/logout">Logout</a></li>
+		 <li class="left"><a href="/main_owner">Back</a></li>
+		 </ul>
+		 <h2 class="important_title">these are your details </h2>
+        <table class="calendar">
+            <tr class="labels_row" />
+                <td> Email</td>
+				<td> Name</td>
+                <td> Birthdate </td>
+                <td> Phone </td>
+                <td> City </td>
+            </tr>
+            
+			<tr class="center">
+				<td>{{Email}}</td>
+				<td>{{Name}} </td>
+				<td>{{Birthdate }} </td>
+				<td>{{Phone}} </td>
+				<td>{{City}} </td>
+			</tr>
+			
+        </table>
+	</body>
+</html>

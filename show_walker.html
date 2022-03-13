@@ -1,0 +1,67 @@
+<!-- shows walker details entered at sign up -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/forms_table.css">
+	</head>
+	<body>
+	<ul class="navigation_bar">
+         <li class="right"><a href="/logout">Logout</a></li>
+		 <li class="left"><a href="/main_walker">Back</a></li>
+		 </ul>
+		 <h2 class="important_title">these are your walker details </h2>
+        <table class="collapsed_table framed">
+            <tr class="labels_row" />
+                <td> Email</td>
+				<td> Name</td>
+                <td> Birthdate </td>
+                <td> Phone </td>
+                <td> City </td>
+				<td> Address </td>
+				<td> Experience </td>
+
+            </tr>
+            
+			<tr class="center">
+				<td>{{Email}}</td>
+				<td>{{Name}} </td>
+				<td>{{Birthdate}} </td>
+				<td>{{Phone}} </td>
+				<td>{{City}} </td>
+				<td>{{Address}} </td>
+				<td>{{Experience}} </td>
+				</tr>
+				
+				<tr></tr>
+				
+				<tr class="labels_row">
+					<td>
+						AVAILABLE SHIFTS:
+					</td>
+				</tr>
+				
+            {% for shift in available_shifts %}
+				<tr class="center">
+					<td> {{shift.0}}</td>
+					<td>{{shift.1}} </td>
+				</tr>
+			{% endfor %}
+			</tr>
+			
+			<tr></tr>
+			
+			<tr class="labels_row">
+				<td>
+					Prices:
+				</td>
+			</tr>
+			{% for price in price_for_size %}
+				<tr class="center">
+					<td> {{price.0}}</td>
+					<td>{{price.1}} </td>
+				</tr>
+			{% endfor %}
+			</tr>
+			
+        </table>
+	</body>
+</html>

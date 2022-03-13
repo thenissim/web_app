@@ -1,0 +1,69 @@
+<!-- Displays a list of walkers per requested day&shift for owner to choose from -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/forms_table.css">
+	</head>
+	<body>
+		 <ul class="navigation_bar">
+         <li class="right"><a href="/logout">Logout</a></li>
+		 <li class="left"><a href="/main_owner">Back</a></li>
+		 </ul>
+		 <h2 class="important_title"> these are the available walkers for the requested times for {{chosen_dog}} </h2>
+		 <form action="/show_match?dog_name={{chosen_dog}}" method="post">
+		 {% if exist_shift == 1 %}
+		 {% for walk in requested_walks %} 
+			{%set count = 0 %} <!-- this counter lets us know if there were any available walkers -->
+			{%set inner = 0 %} <!-- this counter lets us know when we finished checking all the relevant walkers for this shift -->
+			<table>
+				<tr>				
+					Choose your walker for {{walk.0}} {{walk.1}}:
+				</tr>
+			{% for walker in relevant_walkers %}
+				{% set inner = inner+1 %}
+				{% if walker.0 == walk.0 and walker.1 == walk.1 %}
+					<tr>
+						<td>
+							<input type="radio" name="{{walk.0}}_{{walk.1}}" value="{{walker.2}}"> {% set count = count+1 %}
+							{{walker.3}} charges {{walker.4}} $. Phone: {{walker.5}}, Email: {{walker.2}}
+							
+						</td>	
+					</tr>	
+				{% endif %}
+
+				{% if (count == 0) and (inner == len|int) %} 
+					<tr><td>
+					Sorry, no walkers available for this requested shift
+					</td></tr>
+				{% endif %}
+			{% endfor %}
+				
+			</table>
+			<br>
+		{% endfor %}
+		
+			<tr>
+                    <td>
+						<input type="submit" value="Send Requests" class="important_button"/>  
+					</td>
+			</tr>
+		{% elif exist_shift == 0 and num_of_duplicate == 0 %}
+		Sorry, there are no available walkers in your chosen shifts, or there weren't any shifts submitted :( 
+		{% endif %}		
+		
+		
+		{% if num_of_duplicate != 0 %}
+		<br> you already submitted requests for these shifts: (you can cancel them and submit new ones)
+		{%for dup_req in duplicate%}
+		<br> {{dup_req.0}} {{dup_req.1}}
+		{%endfor%}
+		{%endif%}
+		
+		</form>
+	</body>
+</html>
+
+
+
+
+
+       

@@ -1,0 +1,169 @@
+/* ----------------------------------------------------------*/
+/* forms_table.css                                           */
+/* ------------                                              */
+/* css file for handling the display of forms and tables     */
+/* ----------------------------------------------------------*/
+/* Author       - Adar Nissim, Eden Lotan, Tamar Holder      */
+/* Last updated - 2015-11-25                                 */
+/* ----------------------------------------------------------*/
+
+
+/* Style for the important items */
+.important_button {
+	background: maroon;  
+	color: white;
+	padding: 10px 22px;
+	
+}
+.important_title {
+	color: darkOrange;
+	font-weight: bold;
+}
+
+
+/* <td> Style for the labels of each bar - defined for child <td> of labels row <tr> */
+tr.labels_row td {
+	background-color:tan;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+}
+
+
+/* ---------------- style for main pages ---------------- */
+
+body.back_walker_img{
+	background-image:url('dog_walker_img1.jpeg'); 
+	background-position: center;
+	background-size: cover;
+	
+}
+
+body.back_gif{
+	background-image:url('dogs_running.gif'); 
+	background-position: center;
+	background-size: cover;
+	
+}
+
+.button {
+  background-color: wheat; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.center{
+	text-align:center;
+}
+
+a.special_links:visited {
+  color: blue;
+  text-decoration:underline;
+}
+
+body.owner {
+	background-image: url("looking_out.jpg");
+	background-repeat: repeat-x;
+	background-position: bottom;
+	background-size: 50%;
+	
+}
+
+/* --------------- styles for the tables ------------------- */
+
+
+table.calendar, th.calendar, td.calendar{
+		border: 1px solid black;
+		padding: 1em;
+		border-collapse: collapse;
+		margin:0 auto; width:1200px;
+}
+
+td:hover {background-color: #f5f5f5;}
+th {background-color: peru; color:white;}
+
+h2{ text-align:center; 
+	font-family:"Helvetica", Sans-serif;
+}
+
+body {font-family:"Monaco", Monospace;}
+
+
+
+/* -------------- styles for signing up ----------------*/
+.center{
+	text-align:center;
+}
+
+#left{
+	text-align:left;
+}
+/*----------- these are the links' and navigation bar designs ---------------------*/
+
+
+/* unvisited link */
+a:link {
+  color: blue;
+  display: inline-block;
+  text-decoration:none;
+  padding: 14px 16px;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+  display: inline-block;
+  text-decoration:none;
+  padding: 14px 16px;
+}
+
+/* mouse over link */
+li a:hover {
+  background-color: peru;
+}
+
+/* selected link */
+a:active {
+  color: red;
+}
+
+.logout {
+	float:right
+}
+
+#sticky{
+	position:fixed;
+	top:0;
+	width:100%;
+}
+
+ul.navigation_bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: wheat;
+  
+}
+
+li.left {
+  display: block;
+  float: left;
+ 
+  text-decoration:none;
+  
+}
+
+li.right {
+  display: block;
+  float: right;
+
+  text-decoration:none;
+
+}

@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/forms_table.css">
+	</head>
+	<body>
+         <br/>
+         <hr/>
+		 <h2 class="important_title">Sign Up</h2>
+		<form action="/show_owner" method="post">
+            <table>
+			
+                <tr>
+                    <td>
+						Full Name:
+					</td>
+                    <td>
+						<input type="text" pattern="[A-z\s]{1,45}" name="owner_name" required >
+					</td>
+                </tr>
+
+                <tr>
+                    <td>
+						Birthdate:
+					</td>
+                    <td>
+						<input type="date" name="owner_birthdate" required >
+					</td>
+                </tr>
+
+                <tr>
+                    <td>
+						Phone Number:
+					</td>
+                    <td>
+						<input type="tel" pattern="[0-9]{10}" placeholder="0501234567"  name="owner_phone" required>						
+					</td>
+                </tr>
+				
+				<tr>
+					<td>
+						City:
+					</td>
+					<td>
+						<input type="text" pattern="[A-z\s]{1,45}" name="owner_city" required >
+                </tr>
+				
+				<tr>
+                    <td>
+						<input type="submit" value="Sign Up" class="important_button"/>  
+					</td>
+				</tr>
+				
+            </table>
+        </form>
+	</body>
+</html>

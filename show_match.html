@@ -1,0 +1,44 @@
+<!-- Shows walks applications details with chosen walkers -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/forms_table.css">
+	</head>
+	<body>
+         <ul class="navigation_bar">
+         <li class="right"><a href="/logout">Logout</a></li>
+		 <li class="left"><a href="/main_owner">Back</a></li>
+		 <li class="left"><a href="/submit_walk_app">Submit Another Application</a></li>
+		 </ul>
+		<h2 class="important_title"> These are your submitted requests for {{dog_name}} </h2>
+		<table class="calendar" >	
+			<tr class="labels_row"> 
+				<td> Day </td>
+				<td> Shift </td>
+				<td> Walker Name </td>
+				<td> Walker Email </td>
+				<td> Walker Phone </td>
+				<td> Price </td>
+			</tr>
+		{% for request in requests_sent %}
+			<tr class="center"> 
+				<td> {{request.0}} </td>
+				<td> {{request.1}} </td>
+				<td> {{request.2}} </td>
+				<td> {{request.3}} </td>
+				<td> {{request.4}} </td>
+				<td> {{request.5}}$ </td>
+			</tr>						
+		{% endfor %}
+		</table>
+		
+		
+		 
+	</body>
+</html>
+
+
+
+
+
+
+

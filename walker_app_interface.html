@@ -1,0 +1,55 @@
+<!-- Displays walker's pending application (status=pending), when he updates his choises this page gets refresh and he stays here -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/forms_table.css">
+	</head>
+	<body>
+	
+         <ul class="navigation_bar">
+			<li class="right"><a href="/logout">Logout</a></li>
+			<li class="left"><a href="/main_walker">Back</a></li>
+		</ul>
+		
+		<h2 id="left" class="important_title"> These are your pending requests</h1>
+		
+		<form action="/walker_app_interface" method="post">
+		{% if num_of_pending!=0|int %} <!--checking if walker has pending applications, if he does, they appear so he can answer them -->
+		<table>	
+			<tr class="labels_row"> 
+				<td> Day </td>
+				<td> Shift </td>
+				<td> Submit Date </td>
+				<td> Dog Owner's Name </td>
+				<td> Owner's Phone </td>
+				<td> Owner's Email </td>
+				<td> Dog Size </td>
+			</tr>
+		{% for app in existing_apps %}
+			<tr class="center"> 
+				<td> {{app.0}} </td>
+				<td> {{app.1}} </td>
+				<td> {{app.2}} </td>
+				<td> {{app.3}} </td>
+				<td> {{app.4}} </td>
+				<td> {{app.5}} </td>
+				<td> {{app.6}} </td>
+				<td> <input type="radio" name="{{app.7}}" value="approved"> Approve <br>
+					 <input type="radio" name="{{app.7}}" value="declined"> Decline <br> </td>
+					 
+			</tr>	
+		{% endfor %}
+		
+		</table>
+		<input type="submit" value="Update Applications" class="important_button"/>
+		{% else %} <!--walker has no pending applications, he can look at his walks on the calendar -->
+		<br> oops! Looks like you have no pending applications...
+		{% endif %}
+		
+		</form>
+		
+		 
+	</body>
+</html>
+
+
+

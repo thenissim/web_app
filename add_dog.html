@@ -1,0 +1,82 @@
+<!-- here the owner can list a new dog and their details -->
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/forms_table.css">
+	</head>
+	<body>
+		<ul class="navigation_bar">
+			<li class="right"><a href="/logout">Logout</a></li>
+			<li class="left"><a href="/main_owner">Back</a></li>
+		</ul>
+		<br> <h2 class="important_title" id="left" >Enter your dog details </h2>
+		<br>
+		<form action="/show_dog" method="post">
+            <table>
+			
+                <tr>
+                    <td>
+						Dog Name:
+					</td>
+                    <td>
+						<input type="text" pattern="[A-z\s]{1,45}" name="dog_name" required >
+					</td>
+                </tr>
+
+                <tr>
+                    <td>
+						Birthyear:
+					</td>
+                    <td>
+						<input type="year" pattern="[0-9]{4}" name="dog_birthyear" required >
+					</td>
+                </tr>
+
+                <tr>
+                    <td>
+						Size:
+					</td>
+                    <td>
+						<input type="radio" name="dog_size" value="small" required> Small (0-15kg) <br>
+						<input type="radio" name="dog_size" value="medium" required > Medium (15-45kg) <br>
+						<input type="radio" name="dog_size" value="large" required> Large (+45kg) <br>
+					</td>
+                </tr>
+				<tr></tr>
+				<tr>
+					<td>
+						Gender:
+					</td>
+					<td>
+						<input type="radio" name="gender" value="male" required > Male <br>
+						<input type="radio" name="gender" value="female" required > Female <br>
+                </tr>
+				<tr></tr>
+				<tr>
+					<td>
+						Is Your Dog Friendly?
+					</td>
+					<td>
+						<input type="radio" name="is_friendly" value="yes" required > Yes <br>
+						<input type="radio" name="is_friendly" value="no" required > No <br>
+                </tr>
+				<tr></tr>
+				<tr>
+					<td>
+						Is Your Dog Vaccined?
+					</td>
+					<td>
+						<input type="radio" name="is_vaccined" value="yes" required > Yes <br>
+						<input type="radio" name="is_vaccined" value="no" required > No <br>
+                </tr>
+				<tr></tr>
+				<tr>
+                    <td>
+						<input type="submit" value="Add Dog" class="important_button">  
+					</td>
+				</tr>
+				
+            </table>
+        </form>
+	</body>
+</html>

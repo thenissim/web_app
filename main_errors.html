@@ -1,0 +1,25 @@
+<!-- this page shows various errors that can happen -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/forms_table.css">
+	</head>
+	<body>
+		<ul class="navigation_bar">
+			<li class="right"><a href="/logout">Logout</a></li>		 
+			{% if type=="owner" %}
+				<li class="left"><a href="/main_owner">Back</a></li>
+			{% endif %}
+		 
+			{% if type=="walker" %}
+				<li class="left"><a href="/main_walker">Back</a></li>
+			{% endif %}
+		</ul>	
+			<br/>
+			<hr/>
+		 <h2 class="important_title">Oh no! Something went wrong... </h2>
+         <h2> {{error_type}} </h2>
+		 {% if error_num == 3|string %}
+			<h2> You can add a new one <a class="special_links" href="/add_dog">here </h2>
+		 {% endif %}
+	</body>
+</html>

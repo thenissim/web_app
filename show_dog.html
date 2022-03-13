@@ -1,0 +1,35 @@
+<!-- Shows added dog's details  -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/forms_table.css">
+	</head>
+	<body>
+         <ul class="navigation_bar">
+         <li class="right"><a href="/logout">Logout</a></li>
+		 <li class="left"><a href="/main_owner">Back</a></li>
+		 <li class="left"><a href="/add_dog">Add Another Dog</a></li>
+		 </ul>
+		 <h2 class="important_title">these are your dog's details </h2>
+        <table class="calendar">
+            <tr class="labels_row" />
+                <td> Dog Name</td>
+				<td> Birthyear</td>
+                <td> Dog Size </td>
+                <td> Gender </td>
+                <td> Is Friendy </td>
+				<td> Is Vaccined </td>
+            </tr>
+            
+			<tr class="center">
+				<td>{{dog_name}}</td>
+				<td>{{dog_birthyear}} </td>
+				<td>{{dog_size }} </td>
+				<td>{{gender}} </td>
+				<td>{{is_friendly}} </td>
+				<td>{{is_vaccined}} </td>
+			</tr>
+			
+        </table>
+	</body>
+</html>
+

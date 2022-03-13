@@ -1,0 +1,61 @@
+<!-- Displays walker's schedule -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheets/forms_table.css">
+	</head>
+	<body>
+		<ul id="sticky" class="navigation_bar">
+			<li class="right"><a href="/logout">Logout</a></li>
+			<li class="left"><a href="/main_walker">Back</a></li>
+		</ul>
+		<br><br>
+		 <h2 class="important_title">Here's your weekly schedule</h2>
+		 <table class="calendar">
+			<tr>
+			<th class="calendar">Day/Shift</th>
+			<th class="calendar"> Morning </th>
+			<th class="calendar"> Afternoon </th>
+			<th class="calendar"> Evening </th>
+			</tr>
+		 {% for day in days %}
+			<tr>
+				<th class="calendar"> {{day}} </th>
+				{% for shift in shifts %}
+					{%set count = 0 %} <!-- this counter lets us know if there were any schedualled walks in this shift -->
+					{%set inner = 0 %} <!-- this counter lets us know when we finished checking all the existing walks for this shift -->
+				
+					{% for walk in walks_list %} <!-- going through data recieved from sql -->
+						{% set inner = inner+1 %}
+						{% if day == walk.0 and shift == walk.1 %}
+						
+							{% if count==0 %} <!-- this is the first dog matching to this shift -->
+							<td class="calendar">
+							{% endif %}
+							
+								{% set count = count+1 %}
+								<ul>
+								<li>Dog details: {{walk.6}}, {{walk.5}}. <br>
+								Owner details: {{walk.2}}, {{walk.3}}, {{walk.4}}.</li>
+								</ul>
+								
+							
+							
+						{% endif %}
+						{% if (count == 0) and (inner == len|int) %} 
+							<td class="calendar">
+								
+							</td>
+						{% endif %}
+					{% endfor %}
+				
+			{% endfor %}
+			
+	{% endfor %}			
+			</table>
+			
+		
+		
+		</tr>
+	
+	</body>
+</html>
